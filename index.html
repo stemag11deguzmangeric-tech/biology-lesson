@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Biology</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header"></header>
+
+        <!-- Hamburger button (visible on tablet & mobile) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Overlay to close menu when clicking outside -->
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <section class="front-section" id="home">
+            <div class="nav-container">
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+                        <li><a href="Anatomy.html" onclick="closeMenu()">Anatomy</a></li>
+                        <li><a href="Bacteria.html" onclick="closeMenu()">Bacteria</a></li>
+                        <li><a href="Genetics.html" onclick="closeMenu()">Genetics</a></li>
+                        <li><a href="" onclick="closeMenu()">Quiz</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="front-head">
+                <h1><b>Welcome to Our Biology Hub</b></h1>
+                <p>Biology is the study of life, from the smallest cells to the largest ecosystems. 
+                    On this site, you'll discover how living things are structured, how they function,
+                    and how they interact with each other and the environment. Whether you're exploring
+                    human anatomy, plant growth, or the diversity of animals, our goal is to make the 
+                    science of life clear, engaging, and accessible to everyone.</p>
+                <div class="cta-buttons">
+                    <a href="#lessons" class="discover">Learn More</a>
+                    <a href="#quiz" class="find">Test Knowledge</a>
+                </div>
+                <h2><b>Biology</b></h2>
+            </div>
+        </section>
+
+        <section class="overview-section" id="lessons">
+            <h1><b>Lessons</b></h1>
+            <div class="row">
+                <div class="column">
+                    <a href="Anatomy.html"><img src="assests/1.png" alt="Anatomy lesson"></a>
+                </div>
+                <div class="column">
+                    <a href="Bacteria.html"><img src="assests/3.png" alt="Bacteria lesson"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <a href="Genetics.html"><img src="assests/2.png" alt="Genetics lesson"></a>
+                </div>
+                <div class="column">
+                    <a href="lesson4.html"><img src="assests/4.png" alt="Lesson 4"></a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const toggle   = document.getElementById('menuToggle');
+            const nav      = document.getElementById('mainNav');
+            const overlay  = document.getElementById('navOverlay');
+
+            function openMenu() {
+                nav.classList.add('open');
+                overlay.classList.add('active');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeMenu() {
+                nav.classList.remove('open');
+                overlay.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+
+            toggle.addEventListener('click', () => {
+                nav.classList.contains('open') ? closeMenu() : openMenu();
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            // Close menu on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMenu();
+            });
+        </script>
+    </body>
+</html>
