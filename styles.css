@@ -1,0 +1,547 @@
+@font-face {
+    font-family: "Erode";
+    src: url(assests/fonts/erode/Erode-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(assests/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+    /* prevent white/grey margin on sides */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('assests/homebg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    /* use 100% not 100vw to avoid scrollbar-gap on desktop */
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── HOME SECTION ── */
+#front-section,
+.front-section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* ── HEADER / NAV ── */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0)
+    );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* hamburger button – hidden on desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 200;
+    position: fixed;
+    top: 18px;
+    right: 20px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #134e1a;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 28px 60px;
+    font-family: "Poppins";
+    z-index: 150;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding-left: 0;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #134e1a;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ── HERO CONTENT ── */
+.front-head {
+    position: relative;
+    width: 580px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: 80px;
+    padding-top: 180px;
+    color: #134e1a;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.front-head h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+}
+
+.front-head h2 {
+    font-size: 160px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    padding-top: 60px;
+    color: #322a2a;
+}
+
+.front-head p {
+    font-size: 18px;
+    font-family: "Erode";
+    line-height: 1.6;
+}
+
+/* ── CTA BUTTONS ── */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-family: "Poppins";
+    flex-wrap: wrap;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+}
+
+.discover {
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 7px;
+    font-size: 15px;
+    background-color: #134e1a;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.find {
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 7px;
+    font-size: 15px;
+    color: #134e1a;
+    border: 1px solid #134e1a;
+    text-align: center;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── OVERVIEW / LESSONS SECTION ── */
+.overview-section {
+    width: 100%;
+    min-height: 110vh;
+    background-image: url(assests/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 60px 0;
+    border-radius: 100px 100px 0 0;
+}
+
+.overview-section h1 {
+    font-size: clamp(48px, 8vw, 120px);
+    padding-bottom: 10px;
+    padding-left: clamp(20px, 10vw, 450px);
+    font-family: "Poppins";
+    padding-top: 100px;
+    color: #134e1a;
+}
+
+/* ── LESSON GRID ── */
+.row {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.column {
+    flex: 1;
+    min-width: 0;
+    padding: 5px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    transition: transform 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.column img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    transition: transform 0.3s ease;
+}
+
+.center:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* ── NAV OVERLAY (mobile) ── */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 130;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1);   }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0);      }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════════ */
+
+/* ── LARGE DESKTOP (1200px – 1440px) ── */
+@media (max-width: 1440px) {
+    .front-head {
+        margin-right: 60px;
+        padding-top: 160px;
+    }
+
+    .front-head h2 {
+        font-size: 130px;
+    }
+}
+
+/* ── MEDIUM DESKTOP / LAPTOP (992px – 1199px) ── */
+@media (max-width: 1199px) {
+    .front-head {
+        width: 500px;
+        margin-right: 40px;
+        padding-top: 140px;
+    }
+
+    .front-head h1 {
+        font-size: 32px;
+    }
+
+    .front-head h2 {
+        font-size: 100px;
+        padding-top: 40px;
+    }
+
+    .front-head p {
+        font-size: 16px;
+    }
+
+    .overview-section h1 {
+        padding-left: clamp(20px, 8vw, 300px);
+    }
+}
+
+/* ── TABLET LANDSCAPE (769px – 991px) ── */
+@media (max-width: 991px) {
+    /* hamburger visible */
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.97);
+        padding: 80px 30px 30px;
+        transition: right 0.35s ease;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .front-head {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 140px;
+        text-align: center;
+    }
+
+    .front-head h1 {
+        font-size: 28px;
+    }
+
+    .front-head h2 {
+        font-size: 80px;
+        padding-top: 30px;
+    }
+
+    .front-head p {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .overview-section {
+        border-radius: 60px 60px 0 0;
+    }
+
+    .overview-section h1 {
+        font-size: clamp(40px, 8vw, 80px);
+        padding-left: 5%;
+        padding-top: 70px;
+        text-align: center;
+    }
+
+    .row {
+        width: 95%;
+        gap: 15px;
+    }
+}
+
+/* ── TABLET PORTRAIT (576px – 768px) ── */
+@media (max-width: 768px) {
+    .front-head h2 {
+        font-size: 60px;
+        padding-top: 20px;
+    }
+
+    .front-head h1 {
+        font-size: 24px;
+    }
+
+    .front-head p {
+        font-size: 15px;
+    }
+
+    .overview-section {
+        border-radius: 40px 40px 0 0;
+    }
+
+    .overview-section h1 {
+        font-size: clamp(32px, 7vw, 64px);
+        padding-left: 5%;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .column {
+        width: 100%;
+        max-width: 480px;
+    }
+}
+
+/* ── MOBILE (up to 575px) ── */
+@media (max-width: 575px) {
+    body {
+        background-image: linear-gradient(160deg, #ffffff 0%, #e8f5e9 50%, #c8e6c9 100%);
+        background-attachment: scroll;
+        background-size: auto;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .header {
+        padding: 15px 10px;
+    }
+
+    .front-section {
+        min-height: 100svh; /* safe viewport on mobile */
+    }
+
+    .front-head {
+        width: 92%;
+        padding-top: 110px;
+        text-align: center;
+    }
+
+    .front-head h1 {
+        font-size: 20px;
+    }
+
+    .front-head h2 {
+        font-size: 44px;
+        padding-top: 16px;
+    }
+
+    .front-head p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .discover,
+    .find {
+        width: 180px;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .overview-section {
+        border-radius: 30px 30px 0 0;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .overview-section h1 {
+        font-size: clamp(28px, 9vw, 48px);
+        padding-top: 50px;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        width: 92%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 16px;
+    }
+
+    .column {
+        width: 100%;
+        max-width: 360px;
+        padding: 4px;
+    }
+
+    .column:hover,
+    .center:hover {
+        transform: scale(1.02); /* subtler on mobile */
+    }
+}
+
+/* ── VERY SMALL DEVICES (up to 360px) ── */
+@media (max-width: 360px) {
+    .front-head h2 {
+        font-size: 36px;
+    }
+
+    .front-head h1 {
+        font-size: 18px;
+    }
+
+    .overview-section h1 {
+        font-size: 26px;
+    }
+}

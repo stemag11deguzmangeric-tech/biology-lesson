@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Erode";
+    src: url(assests/fonts/erode/Erode-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(assests/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('assests/4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: contain;
+    height: 100vh;
+    width: 100vw;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* home-sec styling */
+#front-section, .front-section {
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 10px;
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+  
+    
+}
+
+nav {
+    margin: 45px 60px;
+    position: fixed;
+    font-family: "Poppins";
+    right: 0;
+    z-index: 1;
+
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding-left: 0;
+ 
+    
+}
+
+nav ul li {
+    flex-wrap: wrap;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #134e1a;
+}

@@ -1,0 +1,259 @@
+@font-face {
+    font-family: "Erode";
+    src: url(assests/fonts/erode/Erode-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(assests/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('assests/2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: contain;
+    height: 100vh;
+    width: 100vw;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* home-sec styling */
+#front-section, .front-section {
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 10px;
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+  
+    
+}
+
+nav {
+    margin: 45px 60px;
+    position: fixed;
+    font-family: "Poppins";
+    right: 0;
+    z-index: 1;
+
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding-left: 0;
+ 
+    
+}
+
+nav ul li {
+    flex-wrap: wrap;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #134e1a;
+}
+
+.front-head {
+    width: 610px;
+    margin-left: 1250px;
+    margin-top: 170px;
+    padding-top: 350px;
+    color: #134e1a;
+    animation: fadeIn 0.5s ease-out;
+    text-align: justify;
+    position: sticky;
+
+    
+}
+
+.front-head h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+}
+
+
+.front-head p {
+    font-size: 25px;
+    font-family: "Erode";
+}
+
+
+
+ @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }}
+
+/* starting style for types  */
+.oxygen{
+    width: auto;
+    height: 110vh;               
+    background-image: url(assests/bactype1.jpg);
+    padding: 1px 1px 0 0;
+    border-radius: 100px 100px 0 0;
+}
+
+
+.oxygen h1 {
+    font-size: 120px;
+    padding-bottom: 10px;
+    padding-top: 40px;
+    font-family: "Poppins";
+    color: #134e1a;
+    text-align: center;
+}
+
+.oxygen h2 {
+    padding-top: 90px;
+    font-size: 60px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    color: #134e1a;
+    padding-left: 20px;
+}
+
+.oxygen h3{
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    color: #134e1a;
+
+}
+
+.oxygen p {
+    font-size: 25px;
+    font-family: "Erode";
+    color: #322a2a;
+    text-align: left;
+}
+
+.shape{
+    width: auto;
+    height: 110vh;               
+    background-image: url(assests/bactype2.jpg);
+    padding: 1px 1px 0 0;
+}
+
+
+
+.shape h2 {
+    padding-top: 240px;
+    font-size: 60px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    color: #134e1a;
+    padding-left: 20px;
+}
+
+.shape h3{
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    color: #134e1a;
+
+}
+
+.shape p {
+    font-size: 25px;
+    font-family: "Erode";
+    color: #322a2a;
+    text-align: left;
+}
+
+         .bacteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            width:1600px;
+            margin-left: 170px;
+            margin-top: 20px;
+            padding-top: 20px;
+            color: #134e1a;
+            text-align: justify;
+        }
+
+        .bacteria-box {
+            border: 2px solid #134e1a;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .bacteria-box h3 {
+            color: #2d5016;
+            margin-top: 0;
+        }
+
+
+              
+            
+             @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+              
+      
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }   
+            
+        }
+  /* end style for organizations  */
+
+     
+
+       

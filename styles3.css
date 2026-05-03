@@ -1,0 +1,207 @@
+@font-face {
+    font-family: "Erode";
+    src: url(assests/fonts/erode/Erode-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(assests/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('assests/3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: contain;
+    height: 100vh;
+    width: 100vw;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* home-sec styling */
+#front-section, .front-section {
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 10px;
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+}
+
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+  
+    
+}
+
+nav {
+    margin: 45px 60px;
+    position: fixed;
+    font-family: "Poppins";
+    right: 0;
+    z-index: 1;
+
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding-left: 0;
+ 
+    
+}
+
+nav ul li {
+    flex-wrap: wrap;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #134e1a;
+}
+
+.front-head {
+    width: 580px;
+    margin-left: 150px;
+    margin-top: 170px;
+    padding-top: 380px;
+    color: #134e1a;
+    animation: fadeIn 0.5s ease-out;
+    text-align: justify;
+
+    
+}
+
+.front-head h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+}
+
+
+.front-head p {
+    font-size: 25px;
+    font-family: "Erode";
+}
+
+/* gen-sec styling */
+
+.gen-sec{
+    width: auto;
+    height: 110vh;               
+    background-image: url(assests/genbg.jpg);
+    padding: 1px 1px 0 0;
+    border-radius: 100px 100px 0 0;
+    
+}
+.gen-sec h1 {
+    font-size: 100px;
+    padding-left: 574px;
+    padding-top: 210px;
+    padding-bottom: 10px;
+    font-family: "Poppins";
+    color: #134e1a;
+}
+
+ .container {
+    
+    width: 800px;
+    margin-left: 700px;
+    margin-top: 100px;
+    padding-top: 1px;
+    animation: fadeIn 0.5s ease-out;
+    text-align: justify;
+    font-size: 30px;
+    font-family: "Erode";
+    color: #322a2a;
+            
+ }
+ .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
+        
+        .column {
+            padding: 0 15px;
+        }
+        
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 600px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+ @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }}
+
+  @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+              
+      
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }   
+            
+        }
